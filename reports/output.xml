@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 7.3.2 (Python 3.11.0 on win32)" generated="2025-09-15T22:22:06.015293" rpa="false" schemaversion="5">
+<suite id="s1" name="Add Books" source="C:\Users\Djanélia Gonçalves\OneDrive\Documents\TESTE_DE_Api\tests\Add_Books.robot">
+<test id="s1-t1" name="Adicionar um novo livro com dados válidos" line="9">
+<kw name="Iniciar sessão para adicionar livros" owner="Add_Books">
+<kw name="Create Session" owner="RequestsLibrary">
+<msg time="2025-09-15T22:22:06.740520" level="INFO">Creating Session using : alias=api, url=https://fakerestapi.azurewebsites.net, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<arg>api</arg>
+<arg>${BASE_URL}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<status status="PASS" start="2025-09-15T22:22:06.734232" elapsed="0.006288"/>
+</kw>
+<status status="PASS" start="2025-09-15T22:22:06.734232" elapsed="0.006288"/>
+</kw>
+<kw name="Enviar a requisição POST para adicionar um novo livro" owner="Add_Books">
+<kw name="Get File" owner="OperatingSystem">
+<msg time="2025-09-15T22:22:06.740520" level="INFO" html="true">Getting file '&lt;a href="file://C:\Users\Djanélia Gonçalves\OneDrive\Documents\payloads\books.json"&gt;C:\Users\Djanélia Gonçalves\OneDrive\Documents\payloads\books.json&lt;/a&gt;'.</msg>
+<msg time="2025-09-15T22:22:06.740520" level="FAIL">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Djanélia Gonçalves\\OneDrive\\Documents\\payloads\\books.json'</msg>
+<var>${payload}</var>
+<arg>../payloads/books.json</arg>
+<doc>Returns the contents of a specified file.</doc>
+<status status="FAIL" start="2025-09-15T22:22:06.740520" elapsed="0.000000">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Djanélia Gonçalves\\OneDrive\\Documents\\payloads\\books.json'</status>
+</kw>
+<kw name="POST On Session" owner="RequestsLibrary">
+<var>${response}</var>
+<arg>api</arg>
+<arg>/books</arg>
+<arg>data=${payload}</arg>
+<arg>headers={"Content-Type":"application/json"}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<status status="NOT RUN" start="2025-09-15T22:22:06.740520" elapsed="0.000000"/>
+</kw>
+<kw name="Set Suite Variable" owner="BuiltIn">
+<arg>${response}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<status status="NOT RUN" start="2025-09-15T22:22:06.740520" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-09-15T22:22:06.740520" elapsed="0.000000">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Djanélia Gonçalves\\OneDrive\\Documents\\payloads\\books.json'</status>
+</kw>
+<kw name="Verificar se o status code da resposta é 201" owner="Add_Books">
+<status status="NOT RUN" start="2025-09-15T22:22:06.740520" elapsed="0.000000"/>
+</kw>
+<kw name="Verificar se o título do livro foi adicionado corretamente" owner="Add_Books">
+<status status="NOT RUN" start="2025-09-15T22:22:06.740520" elapsed="0.000000"/>
+</kw>
+<status status="FAIL" start="2025-09-15T22:22:06.734232" elapsed="0.006288">FileNotFoundError: [Errno 2] No such file or directory: 'C:\\Users\\Djanélia Gonçalves\\OneDrive\\Documents\\payloads\\books.json'</status>
+</test>
+<status status="FAIL" start="2025-09-15T22:22:06.021751" elapsed="0.718769"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat name="Add Books" id="s1" pass="0" fail="1" skip="0">Add Books</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
