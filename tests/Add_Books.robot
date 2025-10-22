@@ -2,7 +2,7 @@
 Library    RequestsLibrary
 
 Resource    ../config/config.resource
-Resource    ../resources/listar_books.resource
+Resource    ../resources/listar_Update_books.resource
 Resource    ../resources/Add_Books.resource
 
 *** Test Cases ***
